@@ -19,8 +19,9 @@ defmodule PhoenixDiff.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PhoenixDiff do
-  #   pipe_through :api
-  # end
+  scope "/api/v1", PhoenixDiff.API.V1 do
+    pipe_through :api
+
+    get "/diff", DiffController, :index
+  end
 end
