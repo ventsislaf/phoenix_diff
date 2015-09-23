@@ -14,6 +14,8 @@ config :phoenix_diff, PhoenixDiff.Endpoint,
   pubsub: [name: PhoenixDiff.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :phoenix_diff, :generated_path, "generated/"
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

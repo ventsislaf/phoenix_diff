@@ -10,7 +10,7 @@ defmodule PhoenixDiff.API.V1.DiffControllerTest do
   end
 
   test "GET /api/v1/diff", %{conn: conn} do
-    conn = get(conn, "/api/v1/diff", %{source: "v1.0.1", target: "v1.0.2"})
+    conn = get(conn, "/api/v1/diff", %{source: "v1", target: "v2"})
 
     response = json_response(conn, 200)
 
