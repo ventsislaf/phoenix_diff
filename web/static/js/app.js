@@ -80,5 +80,7 @@ class Form extends React.Component {
 
 window.onload = () => {
   let element = document.getElementById("form");
-  React.render(<Form />, element);
+  if (element) {
+    React.render(<Form />, element);
+  }
 }

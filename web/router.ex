@@ -17,6 +17,7 @@ defmodule PhoenixDiff.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/diff", DiffController, :show
   end
 
   scope "/api/v1", PhoenixDiff.API.V1 do
