@@ -20,9 +20,7 @@ defmodule PhoenixDiff.Router do
     get "/diff", DiffController, :show
   end
 
-  scope "/api/v1", PhoenixDiff.API.V1 do
-    pipe_through :api
-
-    get "/diff", DiffController, :index
-  end
+  # scope "/api", PhoenixDiff do
+  #   pipe_through :api
+  # end
 end
