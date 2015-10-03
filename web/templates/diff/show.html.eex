@@ -1,1 +1,9 @@
-<%= @diff %>
+<%= for diff <- @file_diffs do %>
+  <div>
+    <h4><%= diff.name %></h4>
+    <p><%= diff.meta %></p>
+    <pre>
+      <%= diff.lines |> Enum.join("\n") %>
+    </pre>
+  </div>
+<% end %>

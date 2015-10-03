@@ -39,7 +39,7 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
 
-    const VERSIONS = ["v0.17.1", "v1.0.0", "v1.0.1", "v1.0.2"];
+    const VERSIONS = ["v0.17.1", "v1.0.0", "v1.0.1", "v1.0.2", "v1.0.3"];
 
     this.state = {
       versions: VERSIONS,
