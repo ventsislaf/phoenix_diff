@@ -3,7 +3,15 @@
     <h4><%= diff.name %></h4>
     <p><%= diff.meta %></p>
     <pre>
-      <%= diff.lines |> Enum.join("\n") %>
+      <table>
+        <%= for parsed_line <- diff.parsed_lines do %>
+          <tr class="<%= parsed_line.type %>">
+            <td class="deletion-line-num"><%= parsed_line.deletion_line_num %></td>
+            <td class="insertion-line-num"><%= parsed_line.insertion_line_num %></td>
+            <td><%= parsed_line.string %></td>
+          </tr>
+        <% end %>
+      </table>
     </pre>
   </div>
 <% end %>
