@@ -4,11 +4,10 @@ defmodule PhoenixDiff.DiffGenerator do
       System.cmd("diff", ["-Nr", "-U", "1000", "-x", ".DS_Store", source, target])
       |> format_response
 
-    diffs =
-      diff
-      |> String.split("diff -Nr -U")
-      |> tl
-      |> Enum.map(&PhoenixDiff.FileDiff.build/1)
+    diff
+    |> String.split("diff -Nr -U")
+    |> tl
+    |> Enum.map(&PhoenixDiff.FileDiff.build/1)
   end
 
   defp format_response({raw_diff, 1}) do
