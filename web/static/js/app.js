@@ -27,8 +27,8 @@ class VersionSelect extends React.Component {
 
   render() {
     return (
-      <select defaultValue={this.props.selected} onChange={this.props.onChange}
-          name={this.props.name}>
+      <select {...this.props}
+          defaultValue={this.props.selected} >
         {this.props.versions.map(this.createOption)}
       </select>
     );
@@ -41,9 +41,23 @@ class Form extends React.Component {
 
     const VERSIONS = ["v0.17.1", "v1.0.0", "v1.0.1", "v1.0.2", "v1.0.3"];
 
+    let { source: sourceSelected, target: targetSelected } = window.location.search
+      .replace('?', '')
+      .split('&')
+      .reduce(function (acc, string) {
+        var split = string.split('=');
+        acc[split[0]] = split[1];
+
+        return acc;
+      }, {});
+
+    targetSelected = targetSelected || VERSIONS[VERSIONS.length - 1];
+    sourceSelected = sourceSelected || VERSIONS[VERSIONS.indexOf(targetSelected) - 1];
+
     this.state = {
       versions: VERSIONS,
-      sourceSelected: VERSIONS[VERSIONS.length - 2]
+      sourceSelected: sourceSelected,
+      targetSelected: targetSelected
     };
   }
 
@@ -64,13 +78,17 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form method="GET" action="/diff">
+      <form method="GET" action="/diff" className="navbar-form navbar-left">
         <VersionSelect versions={this.sourceVersions()}
+          className="form-control"
           selected={this.state.sourceSelected}
           onChange={this.onSourceChange.bind(this)}
           name="source" />
 
-        <VersionSelect versions={this.targetVersions()} name="target" />
+        <VersionSelect versions={this.targetVersions()}
+          className="form-control"
+          selected={this.state.targetSelected}
+          name="target" />
 
         <input type="submit" value="View Diff" />
       </form>
