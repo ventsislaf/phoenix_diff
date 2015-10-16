@@ -16,13 +16,11 @@
       <nav class="navbar navbar-default">
         <div class="container">
           <div class="nav-header">
-            <a class="navbar-brand" href="/">
-              <h1>PhoenixDiff</h1>
-            </a>
+            <a class="navbar-brand" href="/">PhoenixDiff</a>
           </div>
-        </div>
 
-        <div id="form"></div>
+          <div class="collapse navbar-collapse" id="form"></div>
+        </div>
       </nav>
     </header>
 

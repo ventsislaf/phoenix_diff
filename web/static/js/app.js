@@ -78,19 +78,27 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form method="GET" action="/diff" className="navbar-form navbar-left">
-        <VersionSelect versions={this.sourceVersions()}
-          className="form-control"
-          selected={this.state.sourceSelected}
-          onChange={this.onSourceChange.bind(this)}
-          name="source" />
+      <form method="GET" action="/diff" className="navbar-form navbar-left form-inline">
+        <div className="form-group">
+          <label for="source-version">Source:</label>
+          <VersionSelect id="source-version"
+            versions={this.sourceVersions()}
+            className="form-control"
+            selected={this.state.sourceSelected}
+            onChange={this.onSourceChange.bind(this)}
+            name="source" />
+        </div>
 
-        <VersionSelect versions={this.targetVersions()}
-          className="form-control"
-          selected={this.state.targetSelected}
-          name="target" />
+        <div className="form-group">
+          <label for="target-version">Target:</label>
+          <VersionSelect id="target-version"
+            versions={this.targetVersions()}
+            className="form-control"
+            selected={this.state.targetSelected}
+            name="target" />
+        </div>
 
-        <input type="submit" value="View Diff" />
+        <input className="btn btn-primary" type="submit" value="View Diff" />
       </form>
     );
   }

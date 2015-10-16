@@ -2,15 +2,17 @@
   <div>
     <h4><%= diff.name %></h4>
     <p><%= diff.meta %></p>
-    <pre>
-      <table>
-        <%= for parsed_line <- diff.parsed_lines do %>
-          <tr class="<%= parsed_line.type %>">
-            <td class="deletion-line-num"><%= parsed_line.deletion_line_num %></td>
-            <td class="insertion-line-num"><%= parsed_line.insertion_line_num %></td>
-            <td><%= parsed_line.string %></td>
-          </tr>
-        <% end %>
+    <pre class="code-diff">
+      <table class="code-diff--table">
+        <tbody class="code-diff--tablebody">
+          <%= for parsed_line <- diff.parsed_lines do %>
+            <tr class="line <%= parsed_line.type %>">
+              <td class="line-num line-num-deletion"><%= parsed_line.deletion_line_num %></td>
+              <td class="line-num line-num-insertion"><%= parsed_line.insertion_line_num %></td>
+              <td><%= parsed_line.string %></td>
+            </tr>
+          <% end %>
+        </tbody>
       </table>
     </pre>
   </div>

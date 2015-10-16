@@ -1,8 +1,8 @@
 defmodule PhoenixDiff.FileDiff.Line do
   defstruct type: "", insertion_line_num: 0, deletion_line_num: 0, string: ""
 
-  @insertion "insertion"
-  @deletion "deletion"
+  @insertion "line-insertion"
+  @deletion "line-deletion"
   @normal ""
 
   def new("+" <> _full_string = string, previous_line) do

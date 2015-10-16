@@ -1,0 +1,37 @@
+.line {
+  width: 100%;
+}
+
+.line-insertion {
+  background: #eaffea;
+}
+
+.line-deletion {
+  background: #ffecec;
+}
+
+.line-num {
+  text-align: right;
+  width: 3em;
+  padding: 0 8px;
+}
+
+.line-insertion .line-num-deletion {
+  font-size: 0;
+}
+
+.line-deletion .line-num-insertion {
+  font-size: 0;
+}
+
+.code-diff {
+  padding: 0;
+}
+
+.code-diff--table {
+  width: 100%;
+}
+
+.code-diff--tablebody {
+  width: 100%;
+}
