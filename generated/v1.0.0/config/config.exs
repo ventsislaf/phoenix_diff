@@ -9,7 +9,7 @@ use Mix.Config
 config :phoenix_diff, PhoenixDiff.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
-  secret_key_base: "r2JZBhI5HSFxU/t2yQTEbirtt52ac9Quf2jPRaaqz2zb27dRumTbNThzCrp3dvYs",
+  secret_key_base: "<SECRET_KEY_BASE>",
   render_errors: [accepts: ~w(html json)],
   pubsub: [name: PhoenixDiff.PubSub,
            adapter: Phoenix.PubSub.PG2]

@@ -33,7 +33,7 @@ defmodule PhoenixDiff.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_phoenix_diff_key",
-    signing_salt: "4jJVS+q8"
+    signing_salt: "<SIGNING_SALT>"
 
   plug PhoenixDiff.Router
 end
