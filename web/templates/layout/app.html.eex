@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>PhoenixDiff</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -30,5 +31,14 @@
       <%= @inner %>
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">
+          Made with
+          <span class="glyphicon glyphicon-heart red"></span> by Alliants
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
