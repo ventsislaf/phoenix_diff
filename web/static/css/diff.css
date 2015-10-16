@@ -35,3 +35,15 @@
 .code-diff--tablebody {
   width: 100%;
 }
+
+a {
+  color: #F67938;
+}
+
+a:hover, a:visited, a:active {
+  color: #EB7335;
+}
+
+select.form-control {
+  margin: 0 16px 0 8px;
+}

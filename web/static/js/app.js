@@ -20,6 +20,16 @@ import "deps/phoenix_html/web/static/js/phoenix_html"
 
 // import socket from "./socket"
 
+let { source: sourceSelected, target: targetSelected } = window.location.search
+  .replace('?', '')
+  .split('&')
+  .reduce(function (acc, string) {
+    var split = string.split('=');
+    acc[split[0]] = split[1];
+
+    return acc;
+  }, {});
+
 class VersionSelect extends React.Component {
   createOption(version) {
     return <option key={version} value={version}>{version}</option>;
@@ -40,16 +50,6 @@ class Form extends React.Component {
     super(props);
 
     const VERSIONS = ["v0.17.1", "v1.0.0", "v1.0.1", "v1.0.2", "v1.0.3"];
-
-    let { source: sourceSelected, target: targetSelected } = window.location.search
-      .replace('?', '')
-      .split('&')
-      .reduce(function (acc, string) {
-        var split = string.split('=');
-        acc[split[0]] = split[1];
-
-        return acc;
-      }, {});
 
     targetSelected = targetSelected || VERSIONS[VERSIONS.length - 1];
     sourceSelected = sourceSelected || VERSIONS[VERSIONS.indexOf(targetSelected) - 1];
@@ -80,7 +80,7 @@ class Form extends React.Component {
     return (
       <form method="GET" action="/diff" className="navbar-form navbar-left form-inline">
         <div className="form-group">
-          <label for="source-version">Source:</label>
+          <label for="source-version">Source</label>
           <VersionSelect id="source-version"
             versions={this.sourceVersions()}
             className="form-control"
@@ -90,7 +90,7 @@ class Form extends React.Component {
         </div>
 
         <div className="form-group">
-          <label for="target-version">Target:</label>
+          <label for="target-version">Target</label>
           <VersionSelect id="target-version"
             versions={this.targetVersions()}
             className="form-control"
@@ -105,8 +105,8 @@ class Form extends React.Component {
 }
 
 window.onload = () => {
-  let element = document.getElementById("form");
-  if (element) {
-    React.render(<Form />, element);
+  let diffForm = document.getElementById("form");
+  if (diffForm) {
+    React.render(<Form />, diffForm);
   }
 }
