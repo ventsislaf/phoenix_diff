@@ -4,21 +4,25 @@
 </p>
 
 <%= for diff <- @file_diffs do %>
-  <div>
-    <h4><%= diff.name %></h4>
-    <p><%= diff.meta %></p>
-    <pre class="code-diff">
-      <table class="code-diff--table">
-        <tbody class="code-diff--tablebody">
-          <%= for parsed_line <- diff.parsed_lines do %>
-            <tr class="line <%= parsed_line.type %>">
-              <td class="line-num line-num-deletion"><%= parsed_line.deletion_line_num %></td>
-              <td class="line-num line-num-insertion"><%= parsed_line.insertion_line_num %></td>
-              <td><%= parsed_line.string %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </pre>
+  <div class="diff-file">
+    <div class="diff-head">
+      <span class="file-info"><%= diff.name %></span>
+    </div>
+    <table class="code-diff--table">
+      <tbody class="code-diff--tablebody">
+        <tr class="line">
+            <td class="line-num line-num-hunk">...</td>
+            <td class="line-num line-num-hunk">...</td>
+            <td class="line-code line-code-hunk"><%= diff.meta %></td>
+        </tr>
+        <%= for parsed_line <- diff.parsed_lines do %>
+          <tr class="line <%= parsed_line.type %>">
+            <td class="line-num line-num-deletion"><%= parsed_line.deletion_line_num %></td>
+            <td class="line-num line-num-insertion"><%= parsed_line.insertion_line_num %></td>
+            <td class="line-code"><%= parsed_line.string %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 <% end %>
