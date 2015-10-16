@@ -49,7 +49,20 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
 
-    const VERSIONS = ["v0.17.1", "v1.0.0", "v1.0.1", "v1.0.2", "v1.0.3"];
+    const VERSIONS = [
+      // "v0.13.0",
+      // "v0.13.1",
+      // "v0.14.0",
+      // "v0.15.0",
+      "v0.16.0",
+      "v0.16.1",
+      "v0.17.0",
+      "v0.17.1",
+      "v1.0.0",
+      "v1.0.1",
+      "v1.0.2",
+      "v1.0.3"
+    ];
 
     targetSelected = targetSelected || VERSIONS[VERSIONS.length - 1];
     sourceSelected = sourceSelected || VERSIONS[VERSIONS.indexOf(targetSelected) - 1];
