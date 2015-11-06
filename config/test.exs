@@ -13,12 +13,3 @@ config :logger, level: :warn
 
 # Set a higher stacktrace during test
 config :phoenix, :stacktrace_depth, 20
-
-# Configure your database
-config :phoenix_diff, PhoenixDiff.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "phoenix_diff_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox

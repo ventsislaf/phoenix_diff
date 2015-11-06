@@ -21,8 +21,6 @@ defmodule PhoenixDiff.ChannelCase do
       use Phoenix.ChannelTest
 
       alias PhoenixDiff.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
 
 
       # The default endpoint for testing
@@ -31,10 +29,6 @@ defmodule PhoenixDiff.ChannelCase do
   end
 
   setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(PhoenixDiff.Repo, [])
-    end
-
     :ok
   end
 end

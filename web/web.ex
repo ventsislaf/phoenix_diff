@@ -16,20 +16,9 @@ defmodule PhoenixDiff.Web do
   below.
   """
 
-  def model do
-    quote do
-      use Ecto.Model
-      
-    end
-  end
-
   def controller do
     quote do
       use Phoenix.Controller
-
-      alias PhoenixDiff.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 1, from: 2]
 
       import PhoenixDiff.Router.Helpers
     end
@@ -58,10 +47,6 @@ defmodule PhoenixDiff.Web do
   def channel do
     quote do
       use Phoenix.Channel
-
-      alias PhoenixDiff.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 1, from: 2]
 
     end
   end
