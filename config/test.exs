@@ -6,7 +6,7 @@ config :phoenix_diff, PhoenixDiff.Endpoint,
   http: [port: 4001],
   server: false
 
-config :phoenix_diff, :generated_path, "test/fixtures/"
+config :phoenix_diff, :generated_path, "test/fixtures/generated/"
 
 # Print only warnings and errors during test
 config :logger, level: :warn

@@ -16,7 +16,6 @@ defmodule PhoenixDiff.ModelCase do
 
   using do
     quote do
-      alias PhoenixDiff.Repo
       import PhoenixDiff.ModelCase
     end
   end

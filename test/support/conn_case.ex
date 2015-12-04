@@ -20,8 +20,6 @@ defmodule PhoenixDiff.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias PhoenixDiff.Repo
-
       import PhoenixDiff.Router.Helpers
 
       # The default endpoint for testing

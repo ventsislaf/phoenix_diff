@@ -20,8 +20,6 @@ defmodule PhoenixDiff.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias PhoenixDiff.Repo
-
 
       # The default endpoint for testing
       @endpoint PhoenixDiff.Endpoint

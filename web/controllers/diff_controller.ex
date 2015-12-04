@@ -4,7 +4,7 @@ defmodule PhoenixDiff.DiffController do
   @generated_path Application.get_env(:phoenix_diff, :generated_path)
 
   def show(conn, %{"source" => source, "target" => target}) do
-    file_diffs = PhoenixDiff.DiffGenerator.compare_files(
+    {:ok, file_diffs} = PhoenixDiff.DiffGenerator.compare_files(
       @generated_path <> source,
       @generated_path <> target
     )
