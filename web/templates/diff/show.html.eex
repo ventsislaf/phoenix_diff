@@ -1,6 +1,7 @@
 <p>
   Looking for the
-  <%= link "source diff instead?", target: "_blank", to: "https://github.com/phoenixframework/phoenix/compare/#{@source_version}...#{@target_version}" %>
+  <%= link "source diff", target: "_blank", to:
+  "https://github.com/phoenixframework/phoenix/compare/#{@source_version}...#{@target_version}" %> instead?
 </p>
 
 <%= for diff <- @file_diffs do %>

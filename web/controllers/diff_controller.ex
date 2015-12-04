@@ -9,6 +9,12 @@ defmodule PhoenixDiff.DiffController do
       @generated_path <> target
     )
 
-    render(conn, "show.html", file_diffs: file_diffs, source_version: source, target_version: target)
+    render(
+      conn,
+      "show.html",
+      file_diffs: file_diffs,
+      source_version: source,
+      target_version: target
+    )
   end
 end
