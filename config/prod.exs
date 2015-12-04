@@ -20,12 +20,6 @@ config :phoenix_diff, PhoenixDiff.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
-# Configure your database
-config :phoenix_diff, PhoenixDiff.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  url: System.get_env("DATABASE_URL"),
-  pool_size: 20
-
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

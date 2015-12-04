@@ -21,8 +21,6 @@ defmodule PhoenixDiff.ConnCase do
       use Phoenix.ConnTest
 
       alias PhoenixDiff.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
 
       import PhoenixDiff.Router.Helpers
 
@@ -32,10 +30,6 @@ defmodule PhoenixDiff.ConnCase do
   end
 
   setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(PhoenixDiff.Repo, [])
-    end
-
     :ok
   end
 end
